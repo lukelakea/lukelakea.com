@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'website-migration',
+    modulePrefix: 'lukelakea-ember',
     environment,
     rootURL: '/',
     locationType: 'auto',
