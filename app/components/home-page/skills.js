@@ -10,6 +10,7 @@ export default class SkillsComponent extends Component {
     { name: 'CSS' , level: 5 },
     { name: 'Python' , level: 4 },
     { name: 'Jquery' , level: 4 },
-    { name: 'Java', level: 4 }
+    { name: 'Java', level: 4 },
+    { name: 'MySql', level: 3 }
   ]
 }
