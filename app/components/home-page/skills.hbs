@@ -1,15 +1,18 @@
 <h1>skills</h1>
 
-<ul>
-  {{#each-in this.skills as |skill levels|}}
-    <li>{{skill}}
-      <div class="row">
-        <ul>
-          {{#each (range 0 5) levels as |level|}}
-            <div class="bullet"></div>
-          {{/each}}
-        </ul>
-      </div>
-    </li>
-  {{/each-in}}
-</ul>
+<table class="table">
+  <tbody>
+    {{#each skills as |skill|}}
+      <tr>
+        <td>
+          {{skill.name}}
+        </td>
+        <td>
+          {{!#each (repeat 3) as |empty|}}
+            <div>{{skill.level}}</div>
+          {{!/each}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+</table>
