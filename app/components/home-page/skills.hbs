@@ -1,22 +1,18 @@
-<h1>skills</h1>
-
-<div class="row justify-content-center">
-  <div class="col-auto">
-  <table class="table">
+<section class="bg-blue-200">
+  <table class="table mx-auto">
     <tbody>
       {{#each skills as |skill|}}
         <tr>
           <td>
-            <p class="skill-label text-nowrap text-secondary">{{skill.name}}</p>
+            <p class="text-xl mx-4 font-sans text-gray-700">{{skill.name}}</p>
           </td>
           <td>
             {{#each (repeat skill.level) as |empty|}}
-              <div class="bullet bg-info border border-dark rounded d-inline-block w-20 h-100 p-4"></div>
+              <div class="inline-block shadow-lg w-16 h-16 m-1 bg-blue-400 border-solid rounded border-2 border-gray-600"></div>
             {{/each}}
           </td>
         </tr>
         {{/each}}
       </tbody>
   </table>
-</div>
-</div>
+</section>
