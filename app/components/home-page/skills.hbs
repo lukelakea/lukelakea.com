@@ -7,11 +7,11 @@
       {{#each skills as |skill|}}
         <tr>
           <td>
-            <h2>{{skill.name}}</h2>
+            <p class="skill-label text-nowrap">{{skill.name}}</p>
           </td>
           <td>
             {{#each (repeat skill.level) as |empty|}}
-              <div class="bullet"></div>
+              <div class="bullet bg-info"></div>
             {{/each}}
           </td>
         </tr>
