@@ -1,0 +1,10 @@
+<section class="bg-gray-300">
+  <div class="flex flex-wrap content-center justify-center">
+      {{#each projects as |project|}}
+              <div class="inline-block p-1 shadow-lg md:w-5/12 sm:w-10/12 h-1/4 m-2 bg-white rounded">
+                <img class="w-auto h-16 m-auto" src={{project.headerImg}}>
+                <video class="w-auto m-auto" src={{project.videoUrl}} loop autoplay muted playsinline></video>
+              </div>
+        {{/each}}
+  </div>
+</section>
