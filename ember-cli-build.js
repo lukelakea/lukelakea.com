@@ -33,7 +33,6 @@ module.exports = function(defaults) {
       }
     }
   });
-  app.import('vendor/movingLetter.js');
   return app.toTree();
 };
 
