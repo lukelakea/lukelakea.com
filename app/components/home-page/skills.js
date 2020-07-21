@@ -1,4 +1,4 @@
-import Component from '@glimmer/component';
+import Component from '@ember/component';
 
 export default class SkillsComponent extends Component {
   // Set the "categories" property to a JavaScript object
