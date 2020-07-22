@@ -19,7 +19,7 @@ const purgeCSS = {
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     minifyHTML: {
-      enabled: true,
+      enabled: isProduction,
       htmlFiles: ['index.html'],
       minifierOptions: {
         collapseWhitespace : true,
@@ -29,7 +29,7 @@ module.exports = function(defaults) {
       }
     },
     'ember-cli-uglify': {
-      enabled: true,
+      enabled: isProduction,
 
       // exclude: ['vendor.js'],
 
