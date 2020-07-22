@@ -1,1 +1,26 @@
-<h1>Jumbotron</h1>
+<div class="relative h-screen w-screen bg-black">
+  <video class="h-full w-full object-cover absolute top-0 left-0 opacity-50" loop autoplay muted playsinline>
+    <source src="typing.mp4" type="video/mp4">
+  </video>
+  <div class="
+        flex
+        flex-col
+        justify-center
+        items-center
+        text-6xl
+        text-white
+        font-extrabold
+        h-full
+        w-full
+        top-0
+        left-0">
+      <div class="">
+        Luke Lakea
+      </div>
+      <div class="relative w-full h-20">
+        {{#each animatedSubtitles as |t idx|}}
+          <div class="absolute w-full top-0 text-center letters letters-{{idx}}">{{t}}</div>
+        {{/each}}
+      </div>
+  </div>
+</div>

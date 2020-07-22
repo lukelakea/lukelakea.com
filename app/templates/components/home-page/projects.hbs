@@ -1,22 +1,7 @@
-<section class="bg-gray-300">
+<section class="bg-gray-300 py-20">
   <div class="flex flex-wrap content-center justify-center">
       {{#each projects as |project|}}
-        <div class="p-1 relative shadow-lg md:w-5/12 sm:w-10/12 h-1/4 m-2 bg-white rounded" {{on "mouseenter" this.projectTextVideoSwap}} {{on "mouseleave" this.projectTextVideoSwap}}>
-          <img class="w-auto h-16 m-auto" src={{project.headerImg}}>
-          <video class="projectVideoBox visible transition duration-500 opacity-100 transition-opacity w-auto m-auto" src={{project.videoUrl}} loop autoplay muted playsinline></video>
-          <div class="projectTextBox absolute inset-0 mt-16 invisible transition duration-500 opacity-0 transition-opacity">
-            <p class="p-2 relative mt-2 inset-0 text-center sm:text-lg md:text-xs lg:text-base xl:text-xl" >{{project.desc}}</p>
-            <div class="inset-x-0 flex absolute bottom-0 mb-10">
-              {{#if project.internalLink}}
-                <a href={{project.internalLink}} class="flex-1 text-blue-500 self-center p-2 text-center sm:text-lg md:text-xs lg:text-base xl:text-xl">See it here</a>
-              {{/if}}
-              {{#if project.externalLink}}
-                <a href={{project.externalLink}} class="flex-1 text-blue-500 self-center p-2 text-center sm:text-lg md:text-xs lg:text-base xl:text-xl">See it on Github</a>
-              {{/if}}
-            </div>
-            <p class="p-1 text-indigo-900 absolute bottom-0 inset-x-0 text-center sm:text-lg md:text-xs lg:text-base xl:text-lg">{{project.skillsUsed}}</p>
-            </div>
-          </div>
-        {{/each}}
+        <HomePage::ProjectBox @project={{project}} />
+      {{/each}}
   </div>
 </section>

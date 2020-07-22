@@ -1,4 +1,4 @@
-<section class="bg-blue-200">
+<section class="bg-blue-200 py-20">
   <p class="pl-32 pt-4 pb-4 text-center sm:text-xl xs:text-xs mx-4 font-sans text-gray-700">Proficiency</p>
   <table class="table mx-auto">
     <tbody>
@@ -8,11 +8,18 @@
             <p class="sm:text-xl xs:text-xs mx-4 font-sans text-gray-700">{{skill.name}}</p>
           </td>
           <td>
-            {{#each (repeat skill.level)}}
-              <div class="inline-block shadow-lg w-16 h-16 m-1 bg-blue-400 border-solid rounded border-2 border-gray-600"></div>
-            {{/each}}
-            {{#each (repeat skill.empty)}}
-              <div class="inline-block shadow-lg w-16 h-16 m-1 border-solid rounded border-2 border-gray-600"></div>
+            {{#each (range 1 6) as |x|}}
+              <div class="
+                inline-block
+                shadow-lg
+                w-16
+                h-16
+                m-1
+                border-solid
+                rounded
+                border-2
+                border-gray-600
+                {{if (gte skill.level x) 'bg-blue-400'}}"></div>
             {{/each}}
           </td>
         </tr>
