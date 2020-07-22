@@ -337,6 +337,12 @@ module.exports = {
     }),
     minHeight: {
       '0': '0',
+      '250px': '250px',
+      '350px': '350px',
+      '350px': '350px',
+      '400px': '400px',
+      '450px': '450px',
+      '500px': '500px',
       full: '100%',
       screen: '100vh',
     },
