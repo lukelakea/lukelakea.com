@@ -11,16 +11,7 @@ module('Integration | Component | home-page/jumbotron', function(hooks) {
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`<HomePage::Jumbotron />`);
+    assert.ok(this.element.innerText.startsWith("Luke Lakea"))
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <HomePage::Jumbotron>
-        template block text
-      </HomePage::Jumbotron>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

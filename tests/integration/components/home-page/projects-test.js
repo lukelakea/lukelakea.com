@@ -11,16 +11,17 @@ module('Integration | Component | home-page/projects', function(hooks) {
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`<HomePage::Projects />`);
+    assert.ok(this.element.textContent)
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <HomePage::Projects>
-        template block text
-      </HomePage::Projects>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    // assert.equal(this.element.textContent.trim(), '');
+    //
+    // // Template block usage:
+    // await render(hbs`
+    //   <HomePage::Projects>
+    //     template block text
+    //   </HomePage::Projects>
+    // `);
+    //
+    // assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
