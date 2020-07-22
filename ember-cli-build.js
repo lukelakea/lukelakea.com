@@ -18,6 +18,30 @@ const purgeCSS = {
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
+    minifyHTML: {
+      enabled: true,
+      htmlFiles: ['index.html'],
+      minifierOptions: {
+        collapseWhitespace : true,
+        removeComments     : true,
+        minifyJS           : true,
+        minifyCSS          : true
+      }
+    },
+    'ember-cli-uglify': {
+      enabled: true,
+
+      // exclude: ['vendor.js'],
+
+      uglify: {
+        compress: {
+          sequences: 50,
+        },
+        output: {
+          semicolons: true,
+        },
+      },
+    },
     postcssOptions: {
       compile: {
         plugins: [
