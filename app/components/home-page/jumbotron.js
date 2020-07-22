@@ -15,7 +15,7 @@ export default class extends Component {
     this._super(...arguments);
     var tl = anime.timeline({loop: true})
     this.animatedSubtitles.forEach((t, idx) => {
-      var textWrapper = this.$(`.letters.letters-${idx}`).get(0);
+      var textWrapper = this.element.querySelector(`.letters.letters-${idx}`);
       textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, `<span class='letter'>$&</span>`);
       tl.add({
         targets: `.letters.letters-${idx} .letter`,
