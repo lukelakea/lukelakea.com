@@ -5,16 +5,3 @@
 
 @import "tailwindcss/utilities";
 @import "utilities.css";
-
-.ml4 {
-  font-weight: 900;
-  font-size: 4.5em;
-}
-.ml4 .letters {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0.3em;
-  right: 0;
-  opacity: 0;
-}
