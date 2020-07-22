@@ -5493,10 +5493,17 @@ ember-source@~3.19.0:
     semver "^6.1.1"
     silent-error "^1.1.1"
 
-ember-template-lint@^2.8.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.9.0.tgz#0580468e052c53451c1e983578beb7ee59885141"
-  integrity sha512-O+SeYRcG1Ka1VvHIOzRShYq4ZP9hjnOifpat/5ZOElEN40avv+YhOq5iCLZIUtRN3ryceP1W0Pmsnxuaqsq0Pg==
+ember-template-lint-plugin-prettier@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint-plugin-prettier/-/ember-template-lint-plugin-prettier-1.1.0.tgz#29d51f79005658b00522af55760dfcffd2a7ca72"
+  integrity sha512-sJIepjMiEBGO656nwLpnDFyQ6QUhU9y16tBbUJ4riwCYyWS6K2A5gWKn7dO8hJpnB7B+KpLXGVUhENrNB/9yAQ==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
+ember-template-lint@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-2.9.1.tgz#c48f724ef7ddd0a105c94af4f33fb2a53cf8df67"
+  integrity sha512-WYaizP9DFMEr8hK+o6cga8I6DZIl2aTAdwk1H+j+qLPGLFMsk5CkJsoI7q9EVV9GH1qcUGGpM9Pz+NxxSAVhQQ==
   dependencies:
     chalk "^4.0.0"
     ember-template-recast "^4.1.4"
@@ -5506,7 +5513,7 @@ ember-template-lint@^2.8.0:
     is-valid-glob "^1.0.0"
     micromatch "^4.0.2"
     resolve "^1.17.0"
-    yargs "^15.3.1"
+    yargs "^15.4.1"
 
 ember-template-recast@^4.1.4:
   version "4.1.4"
@@ -6083,6 +6090,11 @@ fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
+
+fast-diff@^1.1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
+  integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
 fast-glob@^3.0.3, fast-glob@^3.1.1:
   version "3.2.4"
@@ -9551,6 +9563,18 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
+prettier-linter-helpers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
+  integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+  dependencies:
+    fast-diff "^1.1.2"
+
+prettier@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+
 pretty-hrtime@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
@@ -12126,7 +12150,7 @@ yargs-parser@^18.1.2:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs@^15.3.1:
+yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
