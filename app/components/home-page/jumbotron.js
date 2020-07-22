@@ -1,78 +1,33 @@
 import Component from '@ember/component';
+import anime from 'animejs/lib/anime.es.js';
 
-export default Component.extend({
+export default class extends Component {
+
+  animatedSubtitles = [
+    "Programmer",
+    "Artist",
+    "Developer",
+    "Designer",
+    "外人"
+  ]
+
   didInsertElement() {
     this._super(...arguments);
-    var ml4 = {};
-    ml4.opacityIn = [0,1];
-    ml4.scaleIn = [0.2, 1];
-    ml4.scaleOut = 3;
-    ml4.durationIn = 800;
-    ml4.durationOut = 600;
-    ml4.delay = 500;
-
-    anime.timeline({loop: true})
-      .add({
-        targets: '.ml4 .letters-1',
-        opacity: ml4.opacityIn,
-        scale: ml4.scaleIn,
-        duration: ml4.durationIn
+    var tl = anime.timeline({loop: true})
+    this.animatedSubtitles.forEach(function(t, idx){
+      tl.add({
+        targets: `.letters.letters-${idx}`,
+        opacity: [0,1],
+        scale: [0.2, 1],
+        duration: 800,
       }).add({
-        targets: '.ml4 .letters-1',
+        targets: `.letters.letters-${idx}`,
         opacity: 0,
-        scale: ml4.scaleOut,
-        duration: ml4.durationOut,
+        scale: 3,
+        duration: 500,
         easing: "easeInExpo",
-        delay: ml4.delay
-      }).add({
-        targets: '.ml4 .letters-2',
-        opacity: ml4.opacityIn,
-        scale: ml4.scaleIn,
-        duration: ml4.durationIn
-      }).add({
-        targets: '.ml4 .letters-2',
-        opacity: 0,
-        scale: ml4.scaleOut,
-        duration: ml4.durationOut,
-        easing: "easeInExpo",
-        delay: ml4.delay
-      }).add({
-        targets: '.ml4 .letters-3',
-        opacity: ml4.opacityIn,
-        scale: ml4.scaleIn,
-        duration: ml4.durationIn
-      }).add({
-        targets: '.ml4 .letters-3',
-        opacity: 0,
-        scale: ml4.scaleOut,
-        duration: ml4.durationOut,
-        easing: "easeInExpo",
-        delay: ml4.delay
-      }).add({
-        targets: '.ml4 .letters-4',
-        opacity: ml4.opacityIn,
-        scale: ml4.scaleIn,
-        duration: ml4.durationIn
-      }).add({
-        targets: '.ml4 .letters-4',
-        opacity: 0,
-        scale: ml4.scaleOut,
-        duration: ml4.durationOut,
-        easing: "easeInExpo",
-        delay: ml4.delay
-      }).add({
-        targets: '.ml4 .letters-5',
-        opacity: ml4.opacityIn,
-        scale: ml4.scaleIn,
-        duration: ml4.durationIn
-      }).add({
-        targets: '.ml4 .letters-5',
-        opacity: 0,
-        scale: ml4.scaleOut,
-        duration: ml4.durationOut,
-        easing: "easeInExpo",
-        delay: ml4.delay
+        delay: 500
       });
-
+    });
   }
-})
+}
