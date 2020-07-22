@@ -1,0 +1,11 @@
+<div class="flex bg-gray-400 flex-col w-screen min-h-screen">
+  <div class="flex bg-white w-full justify-between ">
+    <div class='p-5'>Griddit</div>
+    {{#link-to 'application' class='p-5'}}
+      Home
+    {{/link-to}}
+  </div>
+  <div class="flex-grow">
+    {{outlet}}
+  </div>
+</div>
