@@ -3,15 +3,17 @@ import Ember from 'ember';
 import { action } from '@ember/object';
 
 var sorting = 'top';
-var time = 'all';
-
 
 export default Controller.extend({
   subredditName: 'accidentalrenaissance',
+  subredditTimeRange: 'all',
   subredditData: [],
   actions:{
-    update: function(value) {
+    updateSubreddit: function(value) {
       this.set("subredditName", value);
+    },
+    updateTime: function(value) {
+      this.set("subredditTimeRange", value);
     },
     submit: function(value){
       this.subredditSubmitAction();
@@ -23,8 +25,8 @@ export default Controller.extend({
   },
   ajax: Ember.inject.service(),
   subredditSubmitAction(){
-    // console.log(this.get('ajax').request('https://www.reddit.com/r/' + this.subredditName + '.json?sort=' + sorting + '&t=' + time + ''));
-    this.get('ajax').request('https://www.reddit.com/r/' + this.subredditName + '/' + sorting + '.json?t=' + time).then((res)=>{
+    // console.log(this.get('ajax').request('https://www.reddit.com/r/' + this.subredditName + '/' + sorting + '.json?t=' + this.subredditTimeRange));
+    this.get('ajax').request('https://www.reddit.com/r/' + this.subredditName + '/' + sorting + '.json?t=' + this.subredditTimeRange).then((res)=>{
       this.set("subredditData", res);
     });
   },
@@ -32,7 +34,8 @@ export default Controller.extend({
     return Ember.A(this.get('subredditData.data.children'))
     .filter((c)=>{
       var imgLink = c.data.url;
-      if(imgLink.search(".jpg")>0 || imgLink.search(".jpg")>0 ){
+      console.log(c.data.url);
+      if(imgLink.search(".jpg")>0 || imgLink.search(".jpg")>0 || imgLink.search(".gif")>0 ){
         return c;
       }
     });
