@@ -1,12 +1,16 @@
 import Controller from '@ember/controller';
 import Ember from 'ember';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 var sorting = 'top';
 
 export default Controller.extend({
   subredditName: 'accidentalrenaissance',
   subredditTimeRange: 'all',
+  @tracked fullImgIsVisible: false,
+  @tracked fullImgUrl: null,
+  @tracked linkToReddit: null,
   subredditData: [],
   actions:{
     updateSubreddit: function(value) {
@@ -17,7 +21,15 @@ export default Controller.extend({
     },
     submit: function(value){
       this.subredditSubmitAction();
-    }
+    },
+    showFullImg: function(value, redditLink){
+      this.fullImgIsVisible = this.fullImgIsVisible? false : true;
+      this.fullImgUrl = value;
+      this.linkToReddit = "https://reddit.com" + redditLink;
+    },
+    hideFullImg: function(){
+      this.fullImgIsVisible = this.fullImgIsVisible? false : true;
+    },
   },
   init(){
     this._super(...arguments);
@@ -34,7 +46,6 @@ export default Controller.extend({
     return Ember.A(this.get('subredditData.data.children'))
     .filter((c)=>{
       var imgLink = c.data.url;
-      console.log(c.data.url);
       if(imgLink.search(".jpg")>0 || imgLink.search(".jpg")>0 || imgLink.search(".gif")>0 ){
         return c;
       }

@@ -1,9 +1,7 @@
 <div class="flex bg-blue-800 flex-col w-screen min-h-screen">
   <div class="flex bg-blue-700 rounded w-full justify-between mb-1">
-    <div class="p-5">
-      Griddit
-    </div>
-    <form class="w-2/3 flex items-center justify-around">
+    <img src="gridditLogoLarge.png" class="w-40 m-2 p-1">
+    <form class="w-full flex items-center justify-around">
         <select class="py-2 bg-blue-200 rounded shadow" id="timeInput" onchange={{action "updateTime" value="target.value"}}>
           <option value="all">All Time</option>
           <option value="year">Past Year</option>
@@ -63,15 +61,21 @@
         </select>
       <input type="text" name="name" class="py-2 bg-blue-200 rounded shadow" id="subInputText" placeholder=" Or Type One Here!" onchange={{action "updateSubreddit" value="target.value"}}/>
       <button class="button bg-blue-200 p-1 rounded shadow" type="submit" {{action "submit"}}>Submit</button>
+      {{#link-to "application"}}
+      <img class="w-16 p-1" src="home.png">
+      {{/link-to}}
     </form>
-    {{#link-to "application" class="p-5"}}
-    Home
-    {{/link-to}}
+
   </div>
   <div class="flex content-start flex-wrap">
+    {{#if this.fullImgIsVisible}}
+      <div class="fixed flex justify-center items-center h-auto w-full inset-0 m-auto  p-2 bg-black bg-opacity-50" onclick={{action "hideFullImg"}}><img src={{this.fullImgUrl}}>
+        <a class="w-20 h-20 fixed bottom-0 right-0 bg-blue-800 rounded-full p-2 m-2" href={{this.linkToReddit}} target="_blank"><img class="w-full h-auto" src="link.png"></a>
+    </div>
+    {{/if}}
     {{#each filteredChildren as |c|}}
     <div class="w-1/5">
-      <img class="object-cover h-64 w-full" src={{c.data.url}}>
+      <img class="object-cover h-64 w-full" src={{c.data.url}} onclick={{action "showFullImg" c.data.url c.data.permalink }}>
     </div>
     {{/each}}
     {{outlet}}
