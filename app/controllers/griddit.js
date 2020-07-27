@@ -7,7 +7,7 @@ var time = 'all';
 
 
 export default Controller.extend({
-  subredditName: 'imaginarymonsters',
+  subredditName: 'accidentalrenaissance',
   subredditData: [],
   actions:{
     update: function(value) {

@@ -1,19 +1,17 @@
 <div class="flex bg-blue-800 flex-col w-screen min-h-screen">
-  <div class="flex bg-blue-700 rounded w-full justify-between">
+  <div class="flex bg-blue-700 rounded w-full justify-between mb-1">
     <div class="p-5">
       Griddit
     </div>
     <form class="w-2/3 flex items-center justify-around">
-      <div class="select">
-        <select class="py-2 bg-blue-200" id="timeInput">
+        <select class="py-2 bg-blue-200 rounded shadow" id="timeInput">
           <option value="all">All Time</option>
           <option value="year">Past Year</option>
           <option value="month">Past Month</option>
           <option value="week">Past Week</option>
           <option value="day">Past Day</option>
         </select>
-      </div>
-        <select class="py-2 bg-blue-200" id="subInputList" onchange={{action "update" value="target.value"}}>
+        <select class="py-2 bg-blue-200 rounded shadow" id="subInputList" onchange={{action "update" value="target.value"}}>
           <option value="accidentalrenaissance">Accidental Renaissance</option>
           <option value="accidentalrockwell">Accidental Norman Rockwell</option>
           <option value="accidentalwesanderson">Accidental Wes Anderson</option>
@@ -63,16 +61,16 @@
           <option value="winterporn">Winter</option>
           <option value="woahdude">Woah Dude</option>
         </select>
-      <input type="text" name="name" class="py-2 bg-blue-200" id="subInputText" placeholder=" Or Type One Here!"/>
-      <button class="button bg-blue-200 p-1 rounded" type="submit" {{action "submit"}}>Submit</button>
+      <input type="text" name="name" class="py-2 bg-blue-200 rounded shadow" id="subInputText" placeholder=" Or Type One Here!" onchange={{action "update" value="target.value"}}/>
+      <button class="button bg-blue-200 p-1 rounded shadow" type="submit" {{action "submit"}}>Submit</button>
     </form>
     {{#link-to "application" class="p-5"}}
     Home
     {{/link-to}}
   </div>
-  <div class="">
+  <div class="flex content-start flex-wrap">
     {{#each filteredChildren as |c|}}
-    <div class="m-0 w-1/5 inline-block">
+    <div class="w-1/5">
       <img class="object-cover h-64 w-full" src={{c.data.url}}>
     </div>
     {{/each}}
