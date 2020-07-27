@@ -1,3 +1,4 @@
-import Route from "@ember/routing/route";
+import Route from '@ember/routing/route';
 
-export default class GridditRoute extends Route {}
+export default Ember.Route.extend({
+});
