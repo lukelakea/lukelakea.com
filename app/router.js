@@ -7,6 +7,9 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route("griddit");
+  this.route('griddit', function(){
+    this.route('subreddit', {path: '/:subreddit_id'});
+    this.route('index', {path: "/"});
+  });
   this.route("home-page", { path: "/" });
 });
