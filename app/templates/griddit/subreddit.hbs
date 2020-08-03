@@ -1,7 +1,7 @@
 <div class="flex bg-blue-800 flex-col w-screen min-h-screen">
   <div class="flex justify-between items-center bg-blue-700 rounded w-full mb-1">
     <img src="../gridditLogoLarge.png" class="w-40 h-full m-2 p-1 inline-block align-middle">
-    <form class="w-full flex flex-wrap items-center justify-around">
+    <div class="w-full flex flex-wrap items-center justify-around">
         <select class="p-2 bg-blue-200 rounded shadow" id="timeInput" onchange={{action "updateTime" value="target.value"}}>
           <option value="all">All Time</option>
           <option value="year">Past Year</option>
@@ -60,11 +60,10 @@
           <option value="woahdude">Woah Dude</option>
         </select>
       <input type="text" name="name" class="py-2 m-2 bg-blue-200 rounded shadow" id="subInputText" placeholder=" Or Type One Here!" onchange={{action "updateSubreddit" value="target.value"}}/>
-      <button class="button bg-blue-200 p-2 m-1 rounded shadow" type="submit" {{action "submit"}}>Submit</button>
       {{#link-to "application"}}
       <img class="w-16 p-1 m-0" src="../home.png">
       {{/link-to}}
-    </form>
+    </div>
 
   </div>
   <LinkTo @route="griddit" @model={{@griddit}}>
