@@ -41,13 +41,10 @@
               {{project.desc}}
             </div>
             <div class="flex my-3 w-full justify-around">
-              {{#if project.internalLink}}
-                <a
-                  href={{project.route}}
-                  class="text-blue-500 border rounded-md border-solid border-blue-500 py-1 px-2"
-                >
+              {{#if project.route}}
+                {{#link-to project.route class="text-blue-500 border rounded-md border-solid border-blue-500 py-1 px-2"}}
                   See it here
-                </a>
+                {{/link-to}}
               {{/if}}
               {{#if project.externalLink}}
                 <a
