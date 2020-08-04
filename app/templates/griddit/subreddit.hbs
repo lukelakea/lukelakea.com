@@ -61,7 +61,7 @@
         </select>
       <input type="text" name="name" class="py-2 m-2 bg-blue-200 rounded shadow" id="subInputText" placeholder=" Or Type One Here!" onchange={{action "updateSubreddit" value="target.value"}}/>
       {{#link-to "application"}}
-      <img class="w-16 p-1 m-0" src="../home.png">
+        <FaIcon @icon="home" class='text-white fa-2x'  />
       {{/link-to}}
     </div>
 
