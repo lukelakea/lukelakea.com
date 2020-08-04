@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import Ember from 'ember';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import MagicGrid from "magic-grid"
 
 var sorting = 'top';
 
