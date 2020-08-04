@@ -29,12 +29,8 @@ export default Controller.extend({
     },
   },
   filteredChildren: Ember.computed('model',function(){
-    return Ember.A(this.get('model.data.children'))
-    .filter((c)=>{
-      var imgLink = c.data.url;
-      if(imgLink.search(".jpg")>0 || imgLink.search(".png")>0 || imgLink.search(".gif")>0 ){
-        return c;
-      }
+    return Ember.A(this.get('model.data.children')).filter((c)=>{
+      return c.data.thumbnail && c.data.thumbnail.match(/\.(jpg|png|gif)($|\?)/)
     });
   })
 })
