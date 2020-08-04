@@ -12,7 +12,6 @@ export default class ProjectsComponent extends Component {
       videoUrl: "griddit.webm",
       desc:
         "As a personal project, I wanted to create a web app that could show all the top voted posts in a given subreddit. I used Node.js and Snoowrap to access the reddit API, then dispalyed the posts in a gallery format using CSS grid and jQuery. The site is seemlessly scalable and you can click on a photo to view it as large as your browser window is.",
-      internalLink: "lukelakea.com/griddit",
       externalLink: "https://github.com/lukelakea/Griddit",
       skillsUsed: [
         "HTML",
