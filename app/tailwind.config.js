@@ -348,6 +348,7 @@ module.exports = {
     }),
     minHeight: {
       "0": "0",
+      "100px": "100px",
       "250px": "250px",
       "350px": "350px",
       "350px": "350px",

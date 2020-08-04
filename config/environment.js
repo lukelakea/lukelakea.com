@@ -2,6 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
+    historySupportMiddleware: true,
     modulePrefix: "lukelakea-ember",
     environment,
     rootURL: "/",

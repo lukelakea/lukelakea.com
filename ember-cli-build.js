@@ -57,6 +57,8 @@ module.exports = function (defaults) {
       },
     },
   });
+  app.import('node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css');
+  app.import('node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js');
   return app.toTree();
 };
 
