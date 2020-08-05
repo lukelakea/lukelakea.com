@@ -2,63 +2,8 @@
   <div class="flex justify-between items-center bg-blue-700 rounded w-full mb-1">
     <img src="../gridditLogoLarge.png" class="w-40 h-full m-2 p-1 inline-block align-middle">
     <div class="w-full flex flex-wrap items-center justify-around">
-        <select class="p-2 bg-blue-200 rounded shadow" id="timeInput" onchange={{action "updateTime" value="target.value"}}>
-          <option value="all">All Time</option>
-          <option value="year">Past Year</option>
-          <option value="month">Past Month</option>
-          <option value="week">Past Week</option>
-          <option value="day">Past Day</option>
-        </select>
-        <select class="py-2 m-2 bg-blue-200 rounded shadow" id="subInputList" onchange={{action "updateSubreddit" value="target.value"}}>
-          <option value="accidentalrenaissance">Accidental Renaissance</option>
-          <option value="accidentalrockwell">Accidental Norman Rockwell</option>
-          <option value="accidentalwesanderson">Accidental Wes Anderson</option>
-          <option value="aerialporn">Aerial Views</option>
-          <option value="aestheticrain">Aesthetic Rain</option>
-          <option value="architectureporn">Architecture</option>
-          <option value="artporn">Alterantive Art</option>
-          <option value="art">Art</option>
-          <option value="autumnporn">Autumn</option>
-          <option value="bonsaiporn">Bonsai Trees</option>
-          <option value="botanicalporn">Botanical</option>
-          <option value="cats">Cats</option>
-          <option value="churchporn">Churches</option>
-          <option value="cityporn">Cities</option>
-          <option value="colorizedhistory">Colorized History</option>
-          <option value="digitalpainting">Digital Painting</option>
-          <option value="design">Design</option>
-          <option value="dessertporn">Desserts</option>
-          <option value="earthporn">Earth</option>
-          <option value="evilbuildings">Evil Buildings</option>
-          <option value="fashionporn">Fashion</option>
-          <option value="foodporn">Food</option>
-          <option value="geologyporn">Geology</option>
-          <option value="historyporn">History</option>
-          <option value="houseporn">Houses</option>
-          <option value="illustration">Illustration</option>
-          <option value="imaginarybestof">Imaginary Best Of</option>
-          <option value="imaginarycharacters">Imaginary Characters</option>
-          <option value="imaginarylandscapes">Imaginary Landscapes</option>
-          <option value="imaginarymindscapes">Imaginary Mindscapes</option>
-          <option value="imaginarymonsters">Imaginary Monsters</option>
-          <option value="exposureporn">Long Exposure</option>
-          <option value="movieposterporn">Movie Posters</option>
-          <option value="painting">Painting</option>
-          <option value="pixelart">Pixel Art</option>
-          <option value="reactiongifs">Reaction Gifs</option>
-          <option value="spaceflightporn">Space Flight</option>
-          <option value="streetart">Street Art</option>
-          <option value="technologyporn">Technology</option>
-          <option value="televisionposterporn">Television Posters</option>
-          <option value="trippy">Trippy</option>
-          <option value="unstirredpaint">Unstirred Paint</option>
-          <option value="villageporn">Villages</option>
-          <option value="waterporn">Water</option>
-          <option value="watercolor">Watercolor</option>
-          <option value="wildlifephotography">Wildlife Photography</option>
-          <option value="winterporn">Winter</option>
-          <option value="woahdude">Woah Dude</option>
-        </select>
+        <Griddit::TimeSelector @time=time />
+        <Griddit::SubredditSelector @updateSubreddit={{this.updateSubreddit}} />
       <input type="text" name="name" class="py-2 m-2 bg-blue-200 rounded shadow" id="subInputText" placeholder=" Or Type One Here!" onchange={{action "updateSubreddit" value="target.value"}}/>
       {{#link-to "application"}}
         <FaIcon @icon="home" class='text-white fa-2x'  />
@@ -68,7 +13,7 @@
   </div>
   <div class="w-full relative mt-3" id='mg-container'>
     {{#each filteredChildren as |c|}}
-      <a href={{c.data.url}} data-fancybox="images" data-caption="TODO - caption goes here">
+      <a href={{c.data.url}} data-fancybox="images" data-caption={{c.data.title}}>
         <img src={{c.data.thumbnail}} width={{mult 2 c.data.thumbnail_width}} height={{mult 2 c.data.thumbnail_height}} />
       </a>
     {{/each}}

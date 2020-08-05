@@ -13,12 +13,12 @@ export default Controller.extend({
   @tracked fullImgUrl: null,
   @tracked linkToReddit: null,
   model: [],
-  actions:{
+  actions:
+  {
     updateSubreddit: function(value) {
+      debugger;
       this.transitionToRoute('griddit.subreddit',value, {queryParams: { time: this.get('time') }});
-    },
-    updateTime: function(value) {
-      this.set('time',value);
+
     },
     showFullImg: function(value, redditLink){
       this.fullImgIsVisible = this.fullImgIsVisible? false : true;

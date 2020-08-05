@@ -12,7 +12,7 @@ export default class GridditSubredditRoute extends Route {
     }
   };
   model(params){
-    return this.ajax.request('https://www.reddit.com/r/' + params.subreddit_id + '/top.json?t=' + params.time);
+    return this.ajax.request('https://www.reddit.com/r/' + params.subreddit_id + '/top.json?t=' + params.time + '&raw_json=1');
 
   };
   setupController(controller, model) {
